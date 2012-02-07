@@ -1,1 +1,67 @@
-[{"name":"doctrine\/common","version":"2.2.0-RC4","version_normalized":"2.2.0.0-RC4","source":{"type":"git","url":"http:\/\/github.com\/doctrine\/common.git","reference":"2.2.0-RC4"},"dist":{"type":"zip","url":"http:\/\/github.com\/doctrine\/common\/zipball\/2.2.0-RC4","reference":"2.2.0-RC4","shasum":""},"require":{"php":">=5.3.2"},"type":"library","names":["doctrine\/common"],"installation-source":"dist","license":["LGPL"],"autoload":{"psr-0":{"Doctrine\\Common":"lib\/"}}},{"name":"eabay\/oo-wordpress","version":"master-dev","version_normalized":"9999999-dev","source":{"type":"git","url":"http:\/\/github.com\/eabay\/oo-wordpress.git","reference":"b8deb566115a99c4fb02986a6f3002f163134485"},"dist":{"type":"zip","url":"http:\/\/github.com\/eabay\/oo-wordpress\/zipball\/b8deb566115a99c4fb02986a6f3002f163134485","reference":"b8deb566115a99c4fb02986a6f3002f163134485","shasum":""},"require":{"php":">=5.3.2","doctrine\/common":"2.2.*"},"type":"library","names":["eabay\/oo-wordpress"],"installation-source":"dist","license":["MIT"],"autoload":{"psr-0":{"Hwm\\WordPress":"lib\/"}}}]
+[
+    {
+        "name": "doctrine\/common",
+        "version": "2.2.0",
+        "version_normalized": "2.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "http:\/\/github.com\/doctrine\/common.git",
+            "reference": "2.2.0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "http:\/\/github.com\/doctrine\/common\/zipball\/2.2.0",
+            "reference": "2.2.0",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2"
+        },
+        "type": "library",
+        "names": [
+            "doctrine\/common"
+        ],
+        "installation-source": "dist",
+        "license": [
+            "LGPL"
+        ],
+        "autoload": {
+            "psr-0": {
+                "Doctrine\\Common": "lib\/"
+            }
+        }
+    },
+    {
+        "name": "eabay\/oo-wordpress",
+        "version": "master-dev",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "http:\/\/github.com\/eabay\/oo-wordpress.git",
+            "reference": "67be14f4f4e02f5e55aaca05bf8999e9b23c53fb"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "http:\/\/github.com\/eabay\/oo-wordpress\/zipball\/67be14f4f4e02f5e55aaca05bf8999e9b23c53fb",
+            "reference": "67be14f4f4e02f5e55aaca05bf8999e9b23c53fb",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2",
+            "doctrine\/common": "2.2.*"
+        },
+        "type": "library",
+        "names": [
+            "eabay\/oo-wordpress"
+        ],
+        "installation-source": "dist",
+        "license": [
+            "MIT"
+        ],
+        "autoload": {
+            "psr-0": {
+                "Hwm\\WordPress": "lib\/"
+            }
+        }
+    }
+]

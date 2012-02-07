@@ -58,6 +58,11 @@ class PluginManager
                         add_filter($tag, $function_to_add, $priority, $accepted_args);
                     } elseif ($annot instanceof \Hwm\WordPress\Plugin\Annotations\Settings) {
                         $this->addPlugin($plugin->{$method->getName()}());
+                    } elseif ($annot instanceof \Hwm\WordPress\Plugin\Annotations\Shortcode) {
+                        $tag  = $annot->tag;
+                        $func = array($plugin, $method->getName());
+                        
+                        add_shortcode($tag, $func);
                     }
                 }
             }
@@ -70,6 +75,32 @@ class PluginManager
     {
         foreach ($plugins as $plugin) {
             $this->addPlugin($plugin);
+        }
+    }
+    
+    public function addWidget($widget)
+    {
+        $reflClass = new \ReflectionClass($widget);
+        
+        if (!$this->getAnnotationReader()->getClassAnnotation($reflClass, 'Hwm\WordPress\Plugin\Annotations\Widget')) {
+            throw new \InvalidArgumentException("{$reflClass->getName()} does not have any Hwm\WordPress\Plugin\Annotations\Widget annotation instance");
+        }
+        
+        add_action('widgets_init', function () use ($widget) {
+            global $wp_widget_factory;
+            
+            $wp_widget_factory->widgets[get_class($widget)] = $widget;
+        });
+        
+        $this->addPlugin($widget);
+        
+        return $this;
+    }
+    
+    public function addWidgets(array $widgets)
+    {
+        foreach ($widgets as $widget) {
+            $this->addWidget($widget);
         }
     }
 }
